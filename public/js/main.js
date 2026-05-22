@@ -89,6 +89,9 @@ async function loadPokemon() {
     offset += limit;
     isLoading = false;
 
+    // Artificial delay so the spinner is visible before hiding
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
     document.getElementById("loading").style.display = "none";
     document.getElementById("load-more-btn").disabled = false;
 
